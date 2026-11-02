@@ -22,7 +22,7 @@ def generate(n = 200, seed = 42):
   frontal_vol = np.where(target == 1, np.random.normal(22000,2000,n), np.random.normal(28000,2000,n))
 
   df = pd.DataFrame({
-    'ID':[f'{}' for i in range(n),
+    'ID':[f'{i}' for i in range(n)],
     'dx_ftd': target.astype(int),
     'age': np.round(age,1),
     'mmse': np.clip(np.round(mmse), 0,30),
@@ -43,4 +43,4 @@ def generate(n = 200, seed = 42):
 if __name__ == "__main__":
   df = generate()
   df.to_parquet("data/mock9.parquet", engine="pyarrow", index=False)
-  print("mock data created successfully)
+  print("mock data created successfully")
