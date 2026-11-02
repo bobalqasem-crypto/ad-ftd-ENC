@@ -230,3 +230,6 @@ venv/
 # IDE setting
 .vscode/
 .idea/
+
+# data safety
+data/*.parquet
